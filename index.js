@@ -5,7 +5,7 @@ const app = express();
 const dotenv = require("dotenv");
 const fs = require("fs");
 const { incomingRequestLogger } = require("./middleware/index");
-
+app.use(cors());
 dotenv.config();
 const indexRouter = require("./routes/index");
 const userRouter = require("./routes/users");
@@ -13,7 +13,7 @@ const jobRouter = require("./routes/jobs");
 const bodyParser = require("body-parser");
 const connectDB = require('./config/db');
 
-app.use(cors());
+
 
 
 connectDB();
